@@ -6,9 +6,11 @@ import gql from 'graphql-tag'
 const FEED_QUERY = gql`
   {
     feed {
+      reviews {
         id
         trailName
         trailCondition
+      }
     }
   }
 `
@@ -21,7 +23,7 @@ class ReviewList extends Component {
           if (loading) return <div>Fetching</div>
           if (error) return <div>Error</div>
 
-          const reviewsToRender = data.feed
+          const reviewsToRender = data.feed.reviews
 
           return (
             <div>

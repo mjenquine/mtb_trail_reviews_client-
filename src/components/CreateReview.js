@@ -15,12 +15,21 @@ class CreateReview extends Component {
     const { trailName, trailCondition } = this.state
     return (
       <div>
-        <input
-          value={trailName}
-          onChange{ e => this.setState({ trailName: e.target.value })}
-          type='text'
-          placeholder='ie. Hoyt Park'
-        />
+        <div>
+          <input
+            value={trailName}
+            onChange{ e => this.setState({ trailName: e.target.value })}
+            type='text'
+            placeholder='e.g. hoyt park'
+          />
+          <input
+            value={trailCondition}
+            onChange{ e => this.setState({ trailCondition: e.target.value })}
+            type='text'
+            placeholder='e.g. wet and muddy'
+          />
+        </div>
+        <button onClick={}>submit</button>
       </div>
 
     )

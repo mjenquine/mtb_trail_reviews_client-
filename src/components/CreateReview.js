@@ -6,7 +6,7 @@ const POST_MUTATION = gql`
   mutation PostMutation($trailName: String!, $trailCondition: String!) {
     post(trailName: $trailName, trailCondition: $trailCondition) {
       id
-    
+
       trailName
       trailCondition
     }
@@ -39,7 +39,11 @@ class CreateReview extends Component {
             placeholder='e.g. wet and muddy'
           />
         </div>
-        <Mutation mutation={ POST_MUTATION } variables={{ trailName, trailCondition }}>
+        <Mutation
+          mutation={ POST_MUTATION }
+          variables={{ trailName, trailCondition }}
+          onCompleted={() => this.props.history.push('/')}
+        >
           {postMutation => <button onClick={postMutation}>submit</button>}
         </Mutation>
       </div>

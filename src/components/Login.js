@@ -13,7 +13,11 @@ class Login extends Component {
     const { login, email, password, name } = this.state
     return (
       <div>
-        <h4> {login ? 'Login' : 'Sign Up'}<h4>
+
+
+        <h4> {login ? 'Login' : 'Sign Up'}</h4>
+
+
         <div>
           {!login && (
             <input
@@ -36,23 +40,31 @@ class Login extends Component {
             placeholder='password'
           />
         </div>
+
+
         <div>
           <div className="button" onClick={() => this._confirm()}>
             {login ? 'login' : 'create account'}
           </div>
-          <div className="button" onClick{() => this.setState({ login: !login })}>
+          <div className="button" onClick={() => this.setState({ login: !login })}>
             {login ? 'need an account?' : 'already have an account?'}
           </div>
-        </div
+        </div>
+
+
       </div>
     )
   }
-  _confirm = async () => {
 
+
+  _confirm = async () => {
+    console.log("Hi");
   }
   _saveUserData = token => {
     localStorage.setItem(AUTH_TOKEN, token)
   }
+
+
 }
 
 export default Login

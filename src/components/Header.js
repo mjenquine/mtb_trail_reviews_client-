@@ -5,7 +5,12 @@ import { withRouter } from 'react-router'
 class Header extends Component {
   render() {
     return (
-      
+      <div>
+        <Link to='/'> Reviews </Link>
+        <Link to='/create'> Submit </Link>
+
+      </div>
     )
   }
 }
+export default withRouter(Header)

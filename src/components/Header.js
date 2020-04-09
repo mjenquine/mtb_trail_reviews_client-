@@ -14,6 +14,10 @@ class Header extends Component {
         </div>
 
         <div>
+          <Link to='/search'> Search </Link>
+        </div>
+
+        <div>
           {authToken && (
             <Link to='/create'> Submit </Link>
           )}

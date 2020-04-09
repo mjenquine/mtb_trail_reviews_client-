@@ -3,6 +3,7 @@ import ReviewList from './ReviewList'
 import CreateReview from './CreateReview'
 import Header from './Header'
 import Login from './Login'
+import Search from './Search'
 import { Switch, Route } from 'react-router-dom'
 
 
@@ -16,6 +17,7 @@ class App extends Component {
             <Route exact path='/' component={ReviewList} />
             <Route exact path='/create' component={CreateReview} />
             <Route exact path='/login' component={Login} />
+            <Route exact path='/search' component={Search} />
           </Switch>
         </div>
       </div>

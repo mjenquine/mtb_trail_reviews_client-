@@ -7,7 +7,7 @@ const POST_MUTATION = gql`
   mutation PostMutation($trailName: String!, $trailCondition: String!) {
     post(trailName: $trailName, trailCondition: $trailCondition) {
       id
-
+      createdAt
       trailName
       trailCondition
     }

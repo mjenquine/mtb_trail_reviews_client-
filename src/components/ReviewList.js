@@ -8,7 +8,7 @@ export const FEED_QUERY = gql`
     feed {
       reviews {
         id
-
+        createdAt
         trailName
         trailCondition
         postedBy {

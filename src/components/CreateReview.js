@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Mutation } from 'react-apollo'
 import gql from 'graphql-tag'
+import { FEED_QUERY } from './ReviewList'
 
 const POST_MUTATION = gql`
   mutation PostMutation($trailName: String!, $trailCondition: String!) {
@@ -43,6 +44,14 @@ class CreateReview extends Component {
           mutation={ POST_MUTATION }
           variables={{ trailName, trailCondition }}
           onCompleted={() => this.props.history.push('/')}
+          update={(store, { data: { post } }) => {
+            const data = store.readQuery({ query: FEED_QUERY })
+            data.feed.reviews.unshift(post)
+            store.writeQuery({
+              query: FEED_QUERY,
+              data
+            })
+          }}
         >
           {postMutation => <button onClick={postMutation}>submit</button>}
         </Mutation>

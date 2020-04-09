@@ -12,10 +12,6 @@ class Header extends Component {
         <div>
           <Link to='/'> Reviews </Link>
         </div>
-        
-        <div>
-          <Link to='/top'> Top </Link>
-        </div>
 
         <div>
           <Link to='/search'> Search </Link>

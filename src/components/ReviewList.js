@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import Review from './Review'
 import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
@@ -59,6 +59,30 @@ class ReviewList extends Component {
     })
   }
 
+  _getReviewsToRender = data => {
+    const isNewPage = this.props.location.pathname.includes('new')
+    if (isNewPage) {
+      return data.feed.reviews
+    }
+    
+  }
+
+  _nextPage = data => {
+    const page = parseInt(this.props.match.params.page, 10)
+    if (page <= data.feed.count / REVIEWS_PER_PAGE) {
+      const nextPage = page + 1
+      this.props.history.push(`/new/${nextPage}`)
+    }
+  }
+
+  _previousPage = () => {
+    const page = parseInt(this.props.match.params.page, 10)
+    if (page > 1) {
+      const previousPage = page - 1
+      this.props.history.push(`/new/${previousPage}`)
+    }
+  }
+
   _getQueryVariables = () => {
     const isNewPage = this.props.location.pathname.includes('new')
     const page = parseInt(this.props.match.params.page, 10)
@@ -85,7 +109,7 @@ class ReviewList extends Component {
             : 0
 
           return (
-            <div>
+            <Fragment>
               {reviewsToRender.map((review, index) => (<Review key={review.id} review={review} index={index + pageIndex} />))}
               {isNewPage && (
                 <div>
@@ -97,7 +121,7 @@ class ReviewList extends Component {
                   </div>
                 </div>
               )}
-            </div>
+            </Fragment>
           )
         }}
       </Query>

@@ -18,7 +18,6 @@ class App extends Component {
             <Route exact path='/create' component={CreateReview} />
             <Route exact path='/login' component={Login} />
             <Route exact path='/search' component={Search} />
-            <Route exact path='/top' component={ReviewList} />
             <Route exact path='/new/:page' component={ReviewList} />
           </Switch>
         </div>

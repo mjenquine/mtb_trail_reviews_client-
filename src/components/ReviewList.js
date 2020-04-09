@@ -8,8 +8,13 @@ const FEED_QUERY = gql`
     feed {
       reviews {
         id
+
         trailName
         trailCondition
+        postedBy {
+          id
+          name
+        }
       }
     }
   }
@@ -27,7 +32,7 @@ class ReviewList extends Component {
 
           return (
             <div>
-              {reviewsToRender.map(review => <Review key={review.id} review={review} />)}
+              {reviewsToRender.map((review, index) => <Review key={review.id} review={review} index={index} />)}
             </div>
           )
         }}

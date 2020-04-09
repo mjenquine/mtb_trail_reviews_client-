@@ -4,7 +4,7 @@ import CreateReview from './CreateReview'
 import Header from './Header'
 import Login from './Login'
 import Search from './Search'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 
 
 class App extends Component {
@@ -14,10 +14,12 @@ class App extends Component {
         <Header />
         <div>
           <Switch>
-            <Route exact path='/' component={ReviewList} />
+            <Route exact path='/' render={() => <Redirect to='/new/1' />} />
             <Route exact path='/create' component={CreateReview} />
             <Route exact path='/login' component={Login} />
             <Route exact path='/search' component={Search} />
+            <Route exact path='/top' component={ReviewList} />
+            <Route exact path='/new/:page' component={ReviewList} />
           </Switch>
         </div>
       </div>

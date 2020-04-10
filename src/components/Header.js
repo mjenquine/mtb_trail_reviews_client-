@@ -20,7 +20,7 @@ class Header extends Component {
         </div>
         <div className="hero-foot">
           <nav className="tabs">
-            <div className="container">
+            <div className="container has-background-black">
               <ul>
                 <li className="has-text-weight-bold"><Link to='/'> Reviews </Link></li>
                 <li className="has-text-weight-bold"><Link to='/search'> Search </Link></li>

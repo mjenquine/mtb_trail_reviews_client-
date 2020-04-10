@@ -29,17 +29,27 @@ class Search extends Component {
   render() {
     return (
       <div>
-        
-
-        <div>
-          Search
-          <input
-            type='text'
-            onChange={e => this.setState({ filter: e.target.value })}
-          />
-          <button onClick={() => this._executeSearch()}>OK</button>
+        <div className="field is-horizontal">
+          <div className="field-label is-normal">
+            <label className="label">Search Trails</label>
+          </div>
+          <div className="field-body">
+            <div className="field">
+              <p className="control">
+                <input
+                  className="input"
+                  type='text'
+                  onChange={e => this.setState({ filter: e.target.value })}
+                />
+              </p>
+            </div>
+            <div className="field">
+              <div className="control">
+                <button className="button is-dark" onClick={() => this._executeSearch()}>Search</button>
+              </div>
+            </div>
+          </div>
         </div>
-
 
         {this.state.reviews.map((review, index) => (
           <Review key={review.id} review={review} index={index} />

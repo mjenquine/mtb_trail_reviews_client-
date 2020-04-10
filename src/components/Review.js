@@ -16,7 +16,7 @@ class Review extends Component {
               <br />
               { this.props.review.trailCondition }
               <br />
-              <strong>
+              <strong className="has-text-danger">
                 {this.props.review.postedBy
                   ? this.props.review.postedBy.name
                   : 'Unknown'}{' '}

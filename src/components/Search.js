@@ -29,6 +29,8 @@ class Search extends Component {
   render() {
     return (
       <div>
+        
+
         <div>
           Search
           <input
@@ -37,6 +39,8 @@ class Search extends Component {
           />
           <button onClick={() => this._executeSearch()}>OK</button>
         </div>
+
+
         {this.state.reviews.map((review, index) => (
           <Review key={review.id} review={review} index={index} />
         ))}

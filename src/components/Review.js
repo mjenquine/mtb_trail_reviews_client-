@@ -7,17 +7,27 @@ import gql from 'graphql-tag'
 class Review extends Component {
   render() {
     return (
-      <div>
-        <div>
-          { this.props.review.trailName } | { this.props.review.trailCondition }
+
+      <article className="media">
+        <div className="media-content">
+          <div className="content">
+            <p>
+              <strong>{ this.props.review.trailName }</strong>
+              <br />
+              { this.props.review.trailCondition }
+              <br />
+              <strong>
+                {this.props.review.postedBy
+                  ? this.props.review.postedBy.name
+                  : 'Unknown'}{' '}
+              </strong>
+              <small>
+                {timeDifferenceForDate(this.props.review.createdAt)}
+              </small>
+            </p>
+          </div>
         </div>
-        <div>
-          {this.props.review.postedBy
-            ? this.props.review.postedBy.name
-            : 'Unknown'}{' '}
-          {timeDifferenceForDate(this.props.review.createdAt)}
-        </div>
-      </div>
+      </article>
     )
   }
 }

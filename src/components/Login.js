@@ -31,9 +31,9 @@ class Login extends Component {
     const { login, email, password, name } = this.state
     return (
       <div>
-        <form className="pa4 black-80">
-          <h4 className="f6 b db mb2">{login ? 'Login' : 'Sign Up'}</h4>
-          <div className="measure-narrow">
+        <form>
+          <h4>{login ? 'Login' : 'Sign Up'}</h4>
+          <div>
             {!login && (
               <input
                 value={name}
@@ -43,7 +43,7 @@ class Login extends Component {
               />
             )}
           </div>
-          <div className="measure-narrow">
+          <div>
             <input
               value={email}
               onChange={e => this.setState({ email: e.target.value })}
@@ -51,7 +51,7 @@ class Login extends Component {
               placeholder="email address"
             />
           </div>
-          <div className="measure-narrow">
+          <div>
             <input
               value={password}
               onChange={e => this.setState({ password: e.target.value })}

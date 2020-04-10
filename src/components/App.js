@@ -10,9 +10,10 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 class App extends Component {
   render () {
     return (
-      <div>
+      <div >
         <Header />
-        <div>
+        <br />
+        <div className="container is-fluid">
           <Switch>
             <Route exact path='/' render={() => <Redirect to='/new/1' />} />
             <Route exact path='/create' component={CreateReview} />

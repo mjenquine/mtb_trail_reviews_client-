@@ -64,7 +64,7 @@ class ReviewList extends Component {
     if (isNewPage) {
       return data.feed.reviews
     }
-    
+
   }
 
   _nextPage = data => {
@@ -111,16 +111,24 @@ class ReviewList extends Component {
           return (
             <Fragment>
               {reviewsToRender.map((review, index) => (<Review key={review.id} review={review} index={index + pageIndex} />))}
-              {isNewPage && (
-                <div>
-                  <div onClick={this._previousPage}>
-                    Previous
+              <br />
+              <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+                {isNewPage && (
+                  <div>
+                      <a
+                        class="pagination-previous button is-dark is-small"    onClick={this._previousPage}
+                      >
+                        Previous
+                      </a>
+                      <a
+                        class="pagination-next button is-dark is-small"
+                        onClick={() => this._nextPage(data)}
+                      >
+                        Next page
+                      </a>
                   </div>
-                  <div onClick={() => this._nextPage(data)}>
-                    Next
-                  </div>
-                </div>
-              )}
+                )}
+              </nav>
             </Fragment>
           )
         }}

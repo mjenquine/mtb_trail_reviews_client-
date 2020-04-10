@@ -31,48 +31,55 @@ class Login extends Component {
     const { login, email, password, name } = this.state
     return (
       <div>
-        <h4>{login ? 'Login' : 'Sign Up'}</h4>
-        <div>
-          {!login && (
-            <input
-              value={name}
-              onChange={e => this.setState({ name: e.target.value })}
-              type="text"
-              placeholder="name"
-            />
-          )}
-          <input
-            value={email}
-            onChange={e => this.setState({ email: e.target.value })}
-            type="text"
-            placeholder="email address"
-          />
-          <input
-            value={password}
-            onChange={e => this.setState({ password: e.target.value })}
-            type="password"
-            placeholder="password"
-          />
-        </div>
-        <div>
-          <Mutation
-            mutation={login ? LOGIN_MUTATION : SIGNUP_MUTATION}
-            variables={{ email, password, name }}
-            onCompleted={data => this._confirm(data)}
-          >
-            {mutation => (
-              <div className="button" onClick={mutation}>
-                {login ? 'login' : 'create account'}
-              </div>
+        <form className="pa4 black-80">
+          <h4 className="f6 b db mb2">{login ? 'Login' : 'Sign Up'}</h4>
+          <div className="measure-narrow">
+            {!login && (
+              <input
+                value={name}
+                onChange={e => this.setState({ name: e.target.value })}
+                type="text"
+                placeholder="name"
+              />
             )}
-          </Mutation>
-          <div
-            className="button"
-            onClick={() => this.setState({ login: !login })}
-          >
-            {login ? 'need to create an account?' : 'already have an account?'}
           </div>
-        </div>
+          <div className="measure-narrow">
+            <input
+              value={email}
+              onChange={e => this.setState({ email: e.target.value })}
+              type="text"
+              placeholder="email address"
+            />
+          </div>
+          <div className="measure-narrow">
+            <input
+              value={password}
+              onChange={e => this.setState({ password: e.target.value })}
+              type="password"
+              placeholder="password"
+            />
+          </div>
+
+          <div>
+            <Mutation
+              mutation={login ? LOGIN_MUTATION : SIGNUP_MUTATION}
+              variables={{ email, password, name }}
+              onCompleted={data => this._confirm(data)}
+            >
+              {mutation => (
+                <div className="button" onClick={mutation}>
+                  {login ? 'login' : 'create account'}
+                </div>
+              )}
+            </Mutation>
+            <div
+              className="button"
+              onClick={() => this.setState({ login: !login })}
+            >
+              {login ? 'need to create an account?' : 'already have an account?'}
+            </div>
+          </div>
+        </form>
       </div>
     )
   }

@@ -4,6 +4,7 @@ import CreateReview from './CreateReview'
 import Header from './Header'
 import Login from './Login'
 import Search from './Search'
+import Footer from './Footer'
 import { Switch, Route, Redirect } from 'react-router-dom'
 
 
@@ -14,7 +15,7 @@ class App extends Component {
         <Header />
         <br />
         <div className="container is-fluid">
-          <Switch>
+          <Switch >
             <Route exact path='/' render={() => <Redirect to='/new/1' />} />
             <Route exact path='/create' component={CreateReview} />
             <Route exact path='/login' component={Login} />
@@ -22,6 +23,16 @@ class App extends Component {
             <Route exact path='/new/:page' component={ReviewList} />
           </Switch>
         </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <Footer />
       </div>
     )
   }

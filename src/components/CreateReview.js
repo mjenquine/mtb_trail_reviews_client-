@@ -73,7 +73,7 @@ class CreateReview extends Component {
                 })
               }}
             >
-              {postMutation => <button className="button is-dark" onClick={postMutation}>Submit</button>}  
+              {postMutation => <button className="button is-dark" onClick={postMutation}>Submit</button>}
             </Mutation>
           </div>
         </div>

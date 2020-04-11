@@ -4,3 +4,11 @@
 .hero {
   background: url(images/tim-foster-jhovC0t8f-8-unsplash.jpg) center / cover;
 }
+#root {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.body {
+  flex: 1;
+}

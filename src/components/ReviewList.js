@@ -112,16 +112,16 @@ class ReviewList extends Component {
             <Fragment>
               {reviewsToRender.map((review, index) => (<Review key={review.id} review={review} index={index + pageIndex} />))}
               <br />
-              <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+              <nav className="pagination is-centered" role="navigation" aria-label="pagination">
                 {isNewPage && (
                   <div>
                       <a
-                        class="pagination-previous button is-dark is-small"    onClick={this._previousPage}
+                        className="pagination-previous button is-dark is-small"    onClick={this._previousPage}
                       >
                         Previous
                       </a>
                       <a
-                        class="pagination-next button is-dark is-small"
+                        className="pagination-next button is-dark is-small"
                         onClick={() => this._nextPage(data)}
                       >
                         Next page

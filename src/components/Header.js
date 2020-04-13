@@ -9,7 +9,7 @@ class Header extends Component {
     return (
       <section className="hero is-black is-small">
         <div className="hero-body">
-          <div className="container has-text-centered">
+          <div className="container is-fluid has-text-centered">
             <h1 className="title has-text-weight-bold">
               TOSA MTB TRAIL CONDITIONS
             </h1>
@@ -20,7 +20,7 @@ class Header extends Component {
         </div>
         <div className="hero-foot">
           <nav className="tabs">
-            <div className="container has-background-black">
+            <div className="container is-fluid has-background-black">
               <ul>
                 <li className="has-text-weight-bold"><Link to='/'> Reviews </Link></li>
                 <li className="has-text-weight-bold"><Link to='/search'> Search </Link></li>

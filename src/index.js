@@ -17,7 +17,7 @@ import { WebSocketLink} from 'apollo-link-ws'
 import { getMainDefinition } from 'apollo-utilities'
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:4000'
+  uri: 'https://serene-refuge-30866.herokuapp.com/'
 })
 
 const authLink = setContext((_, { headers }) => {
@@ -31,7 +31,7 @@ const authLink = setContext((_, { headers }) => {
 })
 
 const wsLink = new WebSocketLink({
-  uri: `ws://localhost:4000`,
+  uri: `wss://mtb-api-5b6e612ea3.herokuapp.com/mtb_trail_reviews_api/dev`,
   options: {
     reconnect: true,
     connectionParams: {
